@@ -1,0 +1,64 @@
+.navbar-scroll .nav-link,
+.navbar-scroll .navbar-toggler-icon,
+.navbar-scroll .navbar-brand {
+  color: #fff;
+}
+
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-toggler-icon,
+.navbar-scrolled .navbar-brand {
+  color: #fff;
+}
+
+.navbar-scroll,
+.navbar-scrolled {
+  background-color: #cbbcb1;
+}
+
+.mask-custom {
+  backdrop-filter: blur(10px);
+  background-color: #1d1c1bd3;
+}
+
+.nav-link {
+  font-weight: 500;
+}
+
+#social-icons a{
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+#social-icons i{
+  font-size: 1.18rem;
+}
+
+.nav-item a{
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.nav-link:focus{
+  color: #fff;
+}
+
+.navbar img{
+  transition: all 0.3s ease; 
+}
+
+.navbar img:hover{
+  transform: scale(1.1);
+}
+
+.nav-item a:hover{
+  color: #E24903;
+}
+
+@media (max-width: 991px) {
+
+  #social-icons i{
+    font-size: 1.3rem;
+  }
+  
+}

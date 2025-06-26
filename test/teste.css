@@ -1,0 +1,164 @@
+body{
+    background-color: #161616;
+}
+
+.bg-form-ficha{
+    background-image: url(../images/bgherogym3.png);
+    height: 100vh;
+    width: 100vw;
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+
+.card-ficha{
+    width: 75vw;
+    height: fit-content;
+    border-radius: 20px;
+    box-shadow: -2px 30px 40px -6px rgba(0,0,0,0.66);
+    -webkit-box-shadow: -2px 30px 40px -6px rgba(0,0,0,0.66);
+    -moz-box-shadow: -2px 30px 40px -6px rgba(0,0,0,0.66);
+}
+
+.img-ficha{
+    border-start-start-radius: 20px;
+    border-end-start-radius: 20px;
+    width: 45%;
+}
+
+.bg-img-ficha{
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/bg-img-ficha.jpg);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    border-start-start-radius: 20px;
+    border-end-start-radius: 20px;
+}
+
+.form-ficha{
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+    max-height: 635px;
+}
+
+#voltar-ficha{
+    text-decoration: none;
+    color: #fff;
+    font-size: 2rem;
+    height: fit-content;
+}
+
+#dadosForm input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #00000000;
+    font-size: 1.1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: #fff;
+}
+
+#dadosForm input:focus {
+    border-color: #ffffff;
+    color: #fff;
+    outline: none;
+}
+
+#dadosForm input::placeholder {
+    color: #c5c5c5;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); 
+    cursor: pointer;
+}
+
+#dadosForm button{
+    border-radius: 8px;
+    transform: skew(12deg);
+    background-color: #E24903;
+    border: 0;
+    color: #fff;
+    padding: 10px 50px;
+    width: fit-content;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#dadosForm button:hover {
+    background-color: #fc5610;
+    box-shadow: 0 8px 15px rgba(226, 73, 3, 0.6);
+    transform: skew(12deg) scale(1.05);
+}
+
+#dadosForm span{
+    display: inline-block;
+    font-size: 1.2rem;
+    transform: skew(-12deg);
+}
+
+.escolha-planos label {
+    display: block;
+    font-weight: 450;
+    color: #fff;
+}
+
+.escolha-planos .radio-container {
+    border-radius: 4px;
+    padding-top: 5px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    width: fit-content;
+}
+
+.escolha-planos .radio-container input[type="radio"] {
+    display: none;
+}
+
+.escolha-planos .radio-container label {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.212);
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.escolha-planos .radio-container input[type="radio"]:checked + label {
+  background: #E24903;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1200px) {
+    .card-ficha{
+        width: 100vw;
+    }
+}
+
+@media (max-width:768px) {
+    .img-ficha{
+        display: none;
+    }
+
+    .form-ficha{
+        width: 100vw;
+        max-height: max-content;
+    }
+
+    .text-ficha p{
+        width: 90% !important;
+    }
+}
+
+@media (max-width: 447px) {
+    #input-telefone {
+      width: 50% !important; 
+    }
+}

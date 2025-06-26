@@ -4,31 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academia Corpus Fitness PS</title>
+    <meta name="description" content="Academia Corpus Fitness PS oferece o melhor ambiente e os melhores equipamentos para o seu bem-estar. Venha evoluir conosco!">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Academia Corpus Fitness PS - O melhor treino para o seu corpo">
+    <meta property="og:description" content="Transforme seu corpo com a Academia Corpus Fitness PS. Oferecemos o melhor ambiente e os melhores equipamentos para você alcançar seus objetivos.">
+    <meta property="og:image" content="https://www.corpusfitnessps.com.br/images/favoicon1.png">
+    <meta property="og:url" content="https://www.corpusfitnessps.com.br">
+    <meta property="og:type" content="website">
+    <meta name="geo.position" content="-16.4476595;-39.066919">
+    <meta name="geo.region" content="BR-BA">
+    <meta name="place.name" content="Porto Seguro">
+    <link rel="shortcut icon" href="images/favoicon1.png" type="image/png">
+    <link rel="shortcut icon" href="images/favoicon1.ico" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="images/favoicon1.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navbar.css">
 </head>
 <body>
 
-    <header></header>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light mask-custom shadow-0">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="../images/logo.png" alt="logo" width="210px">
+                </a>
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="ph ph-list" style="color: #fff; font-size: 1.8rem;"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="d-lg-flex justify-content-lg-around w-100">
+                        <ul class="navbar-nav text-center">
+                            <li class="nav-item"><a class="nav-link" href="#academia">Modalidades</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#espaco">Espaço</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#planos">Planos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#localizacao">Localização</a></li>
+                        </ul>
+                        <ul class="navbar-nav d-flex flex-row gap-3 mt-3 mt-lg-0 gap-lg-1 justify-content-center" id="social-icons">
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://api.whatsapp.com/send?phone=5573982078074&text=Olá%2C+acabei+de+visitar+o+site+e+tenho+interesse+em+obter+mais+informações." target="_blank"><i class="ph ph-whatsapp-logo"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.instagram.com/corpusfitnessps/" target="_blank"><i class="ph ph-instagram-logo"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tel:(73)3012-4800"><i class="ph ph-phone"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="mailto:contato@exemplo.com"><i class="ph ph-envelope-simple"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <main>
         <!-- HERO -->
         <section class="hero bg-hero">
-            <div id="text-hero">
+            <div id="text-hero" data-aos="fade-right">
                 <h1 style="color:#fff;">SUPERE</h1>
                 <h1 style="color: transparent; -webkit-text-stroke: 2px #E24903;">SEUS</h1>
                 <h1 style="color:#fff;">LIMITES</h1>
                 <p>Transforme seu corpo e mente em um ambiente familiar. Equipamentos de alta qualidade, treinadores especialistas e 
                     resultados garantidos.</p>
-                <a href="#planos">   
+                <a href="#form">   
                     <button><span>Iniciar Jornada</span></button>
                 </a>
 
@@ -54,9 +104,9 @@
 
         <!-- ACADEMIA -->
         <section class="bg-academia">
-            <div class="academia">
+            <div class="academia" id="academia">
                 <!-- MODALIDADES -->
-                <div class="modalidades">
+                <div class="modalidades" id="modalidades" data-aos="zoom-in">
                     <div class="text-center title-modalidades">
                         <h1 style="color: #fff;">TRANSFORME <span style="color: transparent; -webkit-text-stroke: 1px #E24903;">SEU CORPO</span></h1>
                         <h1 style="color: #fff;"><span style="color: transparent; -webkit-text-stroke: 1px #E24903;">TRANSFORME</span> SUA VIDA!</h1>
@@ -66,33 +116,33 @@
                     <div class="container cards-modalidades">
                         <div class="modalidade">
                             <div class="titulo">Musculação</div>
-                            <img src="images/musculacao.jpg" alt="Musculação">
+                            <img src="images/modalidades/musculacao.jpg" alt="Musculação">
                         </div>
                         <div class="modalidade">
                             <div class="titulo">Cardio</div>
-                            <img src="images/cardio.jpg" alt="Cardio">
+                            <img src="images/modalidades/cardio.jpg" alt="Cardio">
                         </div>
                         <div class="modalidade">
                             <div class="titulo">Dança</div>
-                            <img src="images/danca.jpg" alt="Dança">
+                            <img src="images/modalidades/danca.jpg" alt="Dança">
                         </div>
                         <div class="modalidade">
                             <div class="titulo">Boxe</div>
-                            <img src="images/boxe.jpg" alt="Boxe">
+                            <img src="images/modalidades/boxe.jpg" alt="Boxe">
                         </div>
                         <div class="modalidade">
                             <div class="titulo">Jiu-Jitsu</div>
-                            <img src="images/jiu-jitsu.jpg" alt="">
+                            <img src="images/modalidades/jiu-jitsu.jpg" alt="">
                         </div>
                         <div class="modalidade">
                             <div class="titulo">Muay-Thai</div>
-                            <img src="images/muay-thai.jpg" alt="">
+                            <img src="images/modalidades/muay-thai.jpg" alt="">
                         </div>
                     </div>
                 </div>
 
                 <!-- TOUR ACADEMIA -->
-                <div class="tour-academia container">
+                <div class="tour-academia container" id="espaco" data-aos="zoom-out">
                     <div class="text-center titles-tour">
                         <h1 style="color: #fff;">VIVA A EXPERIÊNCIA <span style="color: transparent; -webkit-text-stroke: 1px #E24903;">CORPUS</span></h1>
                         <h1 style="color: #fff;">ELEVE SUA JORNADA <span style="color: transparent; -webkit-text-stroke: 1px #E24903;">FITNESS</span></span></h1>
@@ -161,7 +211,7 @@
 
         <!-- PLANOS -->
         <section class="bg-planos">
-            <div class="container planos" id="planos">
+            <div class="container planos" id="planos" data-aos="zoom-in">
                 <div class="text-center" id="title-planos">
                     <h1 style="color: #fff;">INVISTA <span style="color: transparent; -webkit-text-stroke: 1px #E24903;">EM</span></h1>
                     <h1 style="color: #fff;"><span style="color: transparent; -webkit-text-stroke: 1px #E24903;">SUA</span> EVOLUÇÃO</h1>
@@ -310,7 +360,7 @@
 
         <!-- OUTROS PLANOS -->
         <section class="bg-outros-planos">
-            <div class="container outros-planos">
+            <div class="container outros-planos" data-aos="zoom-out">
                 <div class="title-outros-planos text-center">
                     <h1 style="color: #fff;">SE VOCÊ QUER MAIS</h1>
                     <h1 style="color: transparent; -webkit-text-stroke: 1px #E24903;">AQUI TEM!</h1>
@@ -381,8 +431,9 @@
             </div>
         </section>
 
+        <!-- LOCALIZACAO -->
         <section class="bg-localizacao">
-            <div class="localizacao container">
+            <div class="localizacao container" id="localizacao" data-aos="fade-down">
                 <div class="text-center title-localizacao">
                     <h1 style="color: #fff;">ESTAMOS ESPERANDO<span style="color: transparent; -webkit-text-stroke: 1px #E24903;"> POR VOCÊ!</span></h1>
                 </div>
@@ -419,13 +470,14 @@
                 <div class="container form" id="form">
                     <div class="card-container">
                         <div class="card-form">
-                            <div class="text-form">
+                            <div class="text-form" data-aos="zoom-in">
                                 <div class="text-center" id="title-form">
                                     <h1>SUA TRANSFORMAÇÃO</h1>
                                     <h1>COMEÇA AGORA</h1>
                                 </div>
                                 <p style="font-size: 1.1rem; color: #ffffffa4;">Transforme-se na melhor versão de si mesmo na Corpus Fitness. Mais de 500 pessoas já conquistaram seus objetivos aqui. Agora é a sua vez!</p>
                                 <form id="nomeForm">
+                                    <p class="text-center  m-0" id="alert"  ></p>
                                     <div class="input">
                                         <input type="text" id="primeiro_nome" name="primeiro_nome" placeholder="Primeiro Nome" required>
                                     
@@ -441,13 +493,53 @@
                 </div>
             </div>
         </section>
-
-        
     </main>
 
-    <footer></footer>
+    <footer class="text-white pt-5 pb-5" style="background-color: #1d1c1bd3;">
+        <div class="container">
+            <div class="row text-center text-lg-start">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <a href="/">
+                        <img src="../images/logo.png" alt="logo" width="180px">
+                    </a>
+                    <p class="mt-3">© 2025 Corpus Fitness. Todos os direitos reservados.</p>
+                </div>
+
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="text-uppercase mb-3">Navegação</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-1">
+                        <li><a href="#academia" class="text-white text-decoration-none">Modalidades</a></li>
+                        <li><a href="#espaco" class="text-white text-decoration-none">Espaço</a></li>
+                        <li><a href="#planos" class="text-white text-decoration-none">Planos</a></li>
+                        <li><a href="#localizacao" class="text-white text-decoration-none">Localização</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h5 class="text-uppercase mb-3">Contato</h5>
+                    <div class="d-flex justify-content-center justify-content-lg-start gap-3">
+                        <a href="https://api.whatsapp.com/send?phone=5573982078074&text=Olá%2C+acabei+de+visitar+o+site+e+tenho+interesse+em+obter+mais+informações."
+                            target="_blank" class="text-white fs-5">
+                            <i class="ph ph-whatsapp-logo"></i>
+                        </a>
+                        <a href="https://www.instagram.com/corpusfitnessps/" target="_blank" class="text-white fs-5">
+                            <i class="ph ph-instagram-logo"></i>
+                        </a>
+                        <a href="tel:(73)3012-4800" class="text-white fs-5">
+                            <i class="ph ph-phone"></i>
+                        </a>
+                        <a href="mailto:contato@exemplo.com" class="text-white fs-5">
+                            <i class="ph ph-envelope-simple"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     
     <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
@@ -456,9 +548,23 @@
     lightGallery(document.getElementById("lightgallery"));
     </script>
     <script src="js/gallery.js"></script>
-    <script src="js/whatsapp.js"></script>
+    <script>
+    window.addEventListener('load', () => {
+        AOS.init({
+        once: true,
+        duration: 1000,
+        offset: 150,
+        easing: 'ease-in-out',
+        mirror: false
+        });
+
+        AOS.refresh();
+    });
+    </script>
+    <script src="js/redirect-to-form.js"></script>
     <script src="js/video-tour.js"></script>
     <script src="js/scrolllock.js"></script>
     <script src="https://unpkg.com/phosphor-icons"></script>
+    <script src="js/schema.js"></script>
 </body>
 </html>
