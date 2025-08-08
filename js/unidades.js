@@ -61,7 +61,7 @@ function carregarUnidade(unidade) {
                 document.getElementById('nome-unidade').innerText = 'Erro ao carregar unidade';
                 unidadeContainer.classList.remove('hidden');
             });
-    }, 200); 
+    }, 180); 
 }
 
 carregarUnidade(1);
