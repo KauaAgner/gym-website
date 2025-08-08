@@ -1,0 +1,31 @@
+{
+  "nome": "Unidade Centro",
+  "endereco": "R. Benedito Cláudio, 128 - Centro",
+  "telefone": "(73) 3012-4800",
+  "whatsapp": "(73) 98207-8074",
+  "horarios": {
+    "seg_a_sex": "5h às 23h",
+    "sab": "7h às 16h",
+    "dom": "7h às 12h"
+  },
+  "galeria": [
+  "gallery/1.jpg",
+  "gallery/2.jpg",
+  "gallery/3.jpg",
+  "gallery/4.jpg",
+  "gallery/5.jpg",
+  "gallery/6.jpg",
+  "gallery/7.jpg",
+  "gallery/8.jpg",
+  "gallery/9.jpg",
+  "gallery/10.jpg",
+  "gallery/11.jpg",
+  "gallery/12.jpg",
+  "gallery/13.jpg",
+  "gallery/14.jpg",
+  "gallery/15.jpg",
+  "gallery/16.jpg"
+],
+  "mapa": "mapa.png",
+  "link_mapa": "https://www.google.com/maps/place/Academia+Corpus+Fitness"
+}

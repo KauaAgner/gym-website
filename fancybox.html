@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unidades - Teste com Swiper + lightGallery</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+  <!-- lightGallery CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css"/>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: white;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .btns {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .btns button {
+      background: #E24903;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    .swiper {
+      width: 100%;
+      padding: 20px 0;
+    }
+
+    .swiper-slide {
+      background: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: #E24903;
+    }
+
+    .info-unidade {
+  background: #1c1c1c;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+.info-unidade h3 {
+  margin-top: 0;
+  color: #E24903;
+}
+
+.info-unidade p,
+.info-unidade ul {
+  margin: 5px 0;
+}
+.btns button.active {
+  background-color: #fff;
+  color: #E24903;
+  font-weight: bold;
+  border: 2px solid #E24903;
+}
+
+
+    @media (min-width: 768px) {
+      .swiper-slide {
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="nome-unidade">Carregando unidade...</h1>
+
+  <div class="btns">
+    <button id="btn-unidade-1" onclick="carregarUnidade(1)">Unidade 1</button>
+    <button id="btn-unidade-2" onclick="carregarUnidade(2)">Unidade 2</button>
+  </div>
+
+  <div class="swiper unidade-gallery-swiper">
+    <div class="swiper-wrapper" id="lightgallery">
+      <!-- Slides dinâmicos -->
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+
+  <div class="info-unidade">
+    <h3>Informações da Unidade</h3>
+    <p><strong>Endereço:</strong> <span id="endereco"></span></p>
+    <p><strong>Telefone:</strong> <span id="telefone"></span></p>
+    <p><strong>WhatsApp:</strong> <span id="whatsapp"></span></p>
+    <p><strong>Horários:</strong></p>
+    <ul>
+      <li id="horarios-seg-a-seg"></li>
+      <li id="horarios-sab-dom"></li>
+    </ul>
+    <div>
+      <a id="link-mapa" href="#" target="_blank">
+        <img id="mapa-img" src="" alt="Mapa da Unidade" style="max-width: 100%; border-radius: 8px; margin-top: 10px;" />
+      </a>
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <!-- lightGallery JS -->
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.umd.min.js"></script>
+
+  <script>
+    let swiperInstance = null;
+
+    function carregarUnidade(unidade) {
+  const unidadePath = `images/unidade${unidade}/unidade.json`;
+
+  fetch(unidadePath)
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('nome-unidade').innerText = data.nome;
+
+      const galleryContainer = document.getElementById('lightgallery');
+      galleryContainer.innerHTML = '';
+
+      data.galeria.forEach(image => {
+        const slide = document.createElement('div');
+        slide.className = 'swiper-slide';
+        slide.innerHTML = `
+          <a href="images/unidade${unidade}/${image}">
+            <img src="images/unidade${unidade}/${image}" alt="Foto">
+          </a>`;
+        galleryContainer.appendChild(slide);
+      });
+
+      // Preencher informações adicionais
+      document.getElementById('endereco').innerText = data.endereco;
+      document.getElementById('telefone').innerText = data.telefone;
+      document.getElementById('whatsapp').innerText = data.whatsapp;
+      document.getElementById('horarios-seg-a-seg').innerText = `Seg a Sex: ${data.horarios.seg_a_sex}`;
+      document.getElementById('horarios-sab-dom').innerText = `Sáb: ${data.horarios.sab} | Dom: ${data.horarios.dom}`;
+      document.getElementById('mapa-img').src = `images/${data.mapa}`;
+      document.getElementById('link-mapa').href = data.link_mapa;
+
+      // lightGallery
+      lightGallery(galleryContainer, {
+        selector: 'a',
+        plugins: [lgZoom],
+        speed: 500
+      });
+
+      // Swiper
+      if (swiperInstance) swiperInstance.destroy(true, true);
+      swiperInstance = new Swiper('.unidade-gallery-swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }
+      });
+
+      // 🔥 Aqui entra o botão ativo
+      document.querySelectorAll('.btns button').forEach(btn => btn.classList.remove('active'));
+      const btnAtual = document.getElementById(`btn-unidade-${unidade}`);
+      if (btnAtual) btnAtual.classList.add('active');
+    })
+    .catch(err => {
+      console.error('Erro ao carregar dados da unidade:', err);
+      document.getElementById('nome-unidade').innerText = 'Erro ao carregar unidade';
+    });
+}
+
+
+    // Carrega unidade 1 ao iniciar
+    carregarUnidade(1);
+    
+  </script>
+</body>
+</html>

@@ -1,11 +1,20 @@
 html, body {
     overflow-x: hidden;
-    background-color: #000;
     scroll-behavior: smooth;
+}
+
+body{
+    background-color: #131110;
 }
 
 * h1{
     font-size: 2.9rem;
+}
+
+.nao-interativa{
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 @media (max-width: 480px) {
@@ -16,15 +25,13 @@ html, body {
 
 /* HERO */
 .bg-hero{
-    background-image: url(../images/bgherogym3.png);
+    background: linear-gradient(161deg,rgba(0, 0, 0, 1) 0%, rgba(20, 19, 18, 1) 55%, rgba(51, 34, 31, 1) 100%);
     height: max-content;
     width: 100%;
-    background-size: cover; 
-    background-repeat: no-repeat;
 }
 
 .hero{
-    padding-top: 20px;
+    padding-top: 85px;
     height: fit-content;
     display: flex;
     justify-content: space-around;
@@ -32,7 +39,16 @@ html, body {
 
 .hero a{
     width: fit-content;
-    margin-top: 30px;
+    margin-top: 20px;
+}
+
+#hero-infos{
+    border: solid 2px #777777;
+    border-left: 0px;
+    border-right: 0px;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #0000 30%, #ea580c0d 50%, #0000 70%), linear-gradient(-45deg, #0000 30%, #f59e0b0d 50%, #0000 70%), radial-gradient(circle, #27272ae6 0%, #18181bf2 100%);
+    backdrop-filter: blur(20px);
 }
 
 #text-hero{
@@ -61,7 +77,7 @@ html, body {
     background-color: #E24903;
     border: 0;
     color: #fff;
-    padding: 10px 50px;
+    padding: 10px 40px;
     width: fit-content;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
@@ -76,15 +92,23 @@ html, body {
     display: inline-block;
     font-size: 1.2rem;
     transform: skew(-12deg);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#seta-hero{
+    margin-top: 2px;
+    font-size: 1.7rem;
 }
 
 #hero-nobg{
-    width: 30vw;
+    width: 28vw;
 }
 
 @media (max-width:1365px) {
     #hero-nobg{
-        width: 40vw;
+        width: 37vw;
     }
 }
 
@@ -95,6 +119,7 @@ html, body {
     
     .hero{
         justify-content: start;
+        margin-top: 18px;
     }
 
     #text-hero{
@@ -119,11 +144,8 @@ html, body {
 /* ACADEMIA */
 
 .bg-academia{
-    background-image: url(../images/bgherogym3.png);
     height: max-content;
     width: 100%;
-    background-size: cover; 
-    background-repeat: no-repeat;
 }
 
 .academia{
@@ -131,76 +153,160 @@ html, body {
     height: 100%;
     padding-top: 50px;
     padding-bottom: 70px;
-    background-color: #0000006b;
 }
 
 /* MODALIDADES */
 
-.cards-modalidades{
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-    justify-content: center;
-    max-width: 1080px;
+.modalidades{
+    position: relative;
 }
 
-.modalidade{
-    width: 280px;
-    height: 330px;
-    background-color: #fff;
+.cards-modalidades{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel {
+    background: rgba(0, 0, 0, 0);
+    width: 70%;
+    pointer-events: none;
+    touch-action: none;
+    border-radius: 10px;
+    z-index: 3;
+    border-left: solid 8px #e24a03;
+    border-right: solid 8px #e24a03;
+}
+
+.carousel-cell {
+    width: 240px;
+    margin-right: 30px;
+    flex-shrink: 0;
     clip-path: polygon(0 0, 80% 0%, 100% 20%, 100% 100%, 20% 100%, 0% 80%);
     border-radius: 10px;
-    position: relative;
     overflow: hidden;
-    will-change: transform;
-    transition: transform 0.3s ease;
 }
 
-@media (max-width: 500px) {
-    .cards-modalidades{
-        gap: 30px;
-    }
-
-    .modalidade{
-        width: 230px;
-        height: 280px;
-    }
-}
-
-.modalidade:hover{
-    transform: translateY(-8px) scale(1.02);
-}
-
-.modalidade img{
+.carousel-cell img {
+    display: flex;
+    width: 240px;
     border-radius: 10px;
-    width: 280px; 
-    height: 330px;
+    height: 300px;
     object-fit: cover;
+    pointer-events: none;
+    user-select: none;
 }
 
-.modalidade .titulo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 8px;
-  text-align: center;
-  font-size: 1.35rem;
-  font-weight: 450;
-  color: white;
-  backdrop-filter: blur(8px);
-  background-color: rgba(0, 0, 0, 0.4);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+.carousel .titulo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px;
+    text-align: center;
+    font-size: 1.35rem;
+    font-weight: 450;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.decoracao-modalidade-1{
+    position: absolute;
+    top: 80px;
+}
+
+.decoracao-modalidade-1 img{
+    width: 220px;
+}
+
+.decoracao-modalidade-2{
+    position: absolute;
+    top: 200px;
+    right: -100px;
+}
+
+.decoracao-modalidade-2 img{
+    width: 400px;
+}
+
+@media (max-width: 991px) {
+    .carousel{
+        width: 100%;
+    }
+
+    .decoracao-modalidade-1{
+        left: -60px;
+    }
+    
+    .decoracao-modalidade-2, .decoracao-modalidade-1{
+        opacity: 0.4;
+    }
+}
+
+@media (max-width: 615px) {
+    .decoracao-modalidade-1{
+        opacity: 0.1;
+    }
+
+    .decoracao-modalidade-2{
+        opacity: 0.1;
+        top: 100px;
+    }
 }
 
 /* TOUR ACADEMIA */
 .tour-academia{
-    margin-top: 120px;
+    margin-top: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.btn-unidades{
+    padding: 8px 10px;
+    border: solid 3px #e24a03;
+    border-radius: 10px;
+    transform: skew(14deg);
+    background: linear-gradient(45deg, #0000 30%, #ea580c0d 50%, #0000 70%), linear-gradient(-45deg, #0000 30%, #f59e0b0d 50%, #0000 70%), radial-gradient(circle, #27272ae6 0%, #18181bf2 100%);
+}
+
+.deg-12{
+    transform: skew(-12deg);
+}
+
+.btn-unidades button.active{
+    border-radius: 8px;
+    transform: skew(12deg);
+    background-color: #E24903;
+    border: 0;
+    color: #fff;
+    padding: 8px 40px;
+    width: fit-content;
+}
+
+.btn-unidades button{
+    border-radius: 8px;
+    transform: skew(12deg);
+    background-color: #00000000;
+    border: 0;
+    color: #fff;
+    padding: 8px 40px;
+    width: fit-content;
+}
+
+.btn-unidades span{
+    display: inline-block;
+    font-size: 1.2rem;
+    transform: skew(-24deg);
+}
+
+.bg-btn-gallery{
+    width: max-content;
+    height: max-content;
+    position: relative;
+    margin-bottom: 30px;
 }
 
 @media (max-width: 500px) {
@@ -213,47 +319,94 @@ html, body {
     }
 }
 
-#lightgallery {
+.unidades-container {
+    display: flex;  
+    width: 100vw;
+    height: auto;  
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 40px 90px;
+    background: linear-gradient(45deg, #0000 30%, #94390810 50%, #0000 70%), linear-gradient(-45deg, #0000 30%, #8355060d 50%, #0000 70%), radial-gradient(circle, #27272ae6 0%, #18181baf 100%);
+}
+
+.unidades-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    width: 100%;
+    background: linear-gradient(90deg,rgba(226, 73, 3, 1) 12%, rgba(10, 10, 10, 0) 100%);
+}
+
+.unidades-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 6px;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(226, 73, 3, 1) 88%);
+}
+
+.unidade{
+    display: flex;  
+    width: 100%;
+    height: auto;  
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 0.2s ease-in-out;
+}
+
+#unidade.hidden {
+    opacity: 0;
+}
+
+.bg-swiper{
+    padding: 10px 40px;
+    border-radius: 30px;
+    background: linear-gradient(120deg,rgba(38, 38, 42, 1) 0%, rgba(24, 24, 27, 1) 100%);
+    border-left: solid 6px #e24a03;
+    border-right: solid 6px #e24a03;
+}
+
+.swiper {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.swiper-slide {
+    max-width: 300px;
     display: flex;
-}
-
-#lightgallery a {
-    width: auto;
-    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
     overflow: hidden;
-    border-radius: 8px;
-    flex: 0 0 auto;
-    margin-right: 20px;
-    display: block;
 }
 
-#lightgallery img {
+.swiper-slide img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
     object-fit: cover;
-    transition: transform 0.3s;
+    border-radius: 8px;
 }
 
-#lightgallery a:hover img{
-    transform: scale(1.05);
+.swiper-button-prev,
+.swiper-button-next {
+    color: #E24903;
 }
 
-@media (max-width: 480px) {
-    .glider{
-        height: 400px;
-        display: flex;
-        align-items: center;
+@media (min-width: 768px) {
+    .swiper-slide {
+        max-width: 180px;
     }
-
-    #lightgallery img {
-        height: 380px;
-        object-fit: cover;
-        width: 75vw;
-    }
-
-    .glider-slide{
-        width: 75vw !important;
+}
+@media (max-width: 580px) {   
+    .unidades-container{
+        padding: 40px 16px;
     }
 }
 
@@ -288,21 +441,197 @@ html, body {
     transform: skew(-12deg);
 }
 
-/* PLANOS */
+/* LOCALIZAÇÃO */
 
-.bg-planos{
-    background-image: url(../images/bgherogym3.png);
-    height: max-content;
-    width: 100%;
-    background-size: cover; 
-    background-repeat: no-repeat;
+.localizacao{
+    padding-top: 50px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.card-localizacao{
+    max-width: 1060px;
+    min-width: 710px;
+    margin-top: 40px;
+    display: flex;
+    border-radius: 12px;
+    justify-content: center;
+    width: fit-content;
+    border: solid 3px #e24a03c7;
+}
+
+#mapa{
+    width: 30vw;
+    max-width: 690px;
+    min-width: 355px;
+    height: 360px;
+    background-color: #fff;
+    border-start-start-radius: 10px;
+    border-end-start-radius: 10px;
+    border-right: 2px solid #e24a03c7;
+    overflow: hidden;
+}
+
+#mapa-img{
+    width: 30vw;
+    height: 360px;
+    min-width: 470px;
+    position: relative;
+    left: -10px;
+    bottom: 0px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+#info-unidade{
+    width: 30vw;
+    min-width: 355px;
+    height: 360px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 25px;
+    background: linear-gradient(120deg,rgba(38, 38, 42, 1) 0%, rgba(24, 24, 27, 1) 100%);
+}
+
+#info-unidade h5{
+    display: flex; 
+    align-items: center;
+    color: #ffffffc5;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+#info-unidade i{
+    font-size: 1.4rem; 
+    color: #e24a03c7; 
+    margin-right: 8px;
+    background-color: #4F301E;
+    padding: 3px;
+    border-radius: 8px;
+}
+
+.horarios{
+    margin-top: 25px;
+}
+
+.horarios h4{
+    display: flex; 
+    align-items: center;
+    color: #ffffffe1;
+}
+
+.btn-localizacao{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#btn-localizacao{
+    border-radius: 8px;
+    transform: skew(12deg);
+    background-color: #e24a03e8;
+    border: 0;
+    color: #fff;
+    padding: 6px 40px;
+    width: fit-content;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#btn-localizacao i{
+    color: #fff;
+    margin-right: -5px;
+    background-color: inherit !important;
+    padding: 0;
+    border-radius: 0;
+}
+
+#btn-localizacao:hover{
+    background-color: #fc5610;
+    box-shadow: 0 8px 15px rgba(226, 73, 3, 0.6);
+    transform: skew(12deg) scale(1.05);
+}
+
+#btn-localizacao span{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 1.2rem;
+    transform: skew(-12deg);
+}
+
+@media (max-width:991px) {
+    .card-localizacao{
+        min-width: 0;
+        width: 361px;
+        flex-wrap: wrap;
+    }
+
+    #mapa{
+        border-start-start-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+        border-right: 0;
+        border-bottom: solid 2px #e24a03c7;
+    }
+
+    #info-unidade{
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 10px;
+    }
+}
+
+@media (max-width: 405px) {
+    .card-localizacao{
+        width: 320px;
+    }
+
+    #mapa{
+        width: 320px;
+        min-width: 300px;
+    }
+
+    #info-unidade{
+        width: 320px;
+        min-width: 300px;
+        height: 365px;
+    }
+}
+
+/* PLANOS */
 
 .planos{
     width: 100%;
     height: 100%;
     padding-top: 50px;
     padding-bottom: 40px;
+    position: relative;
+}
+
+.decoracao-planos-1{
+    position: absolute;
+    top: 70px;
+    right: -112px;
+}
+
+.decoracao-planos-1 img{
+    width: 250px;
+    object-fit: cover;
+}
+
+.decoracao-planos-2{
+    position: absolute;
+    top: -10px;
+    left: -40px;
+    transform: scaleX(-1) scaleY(-1);
+}
+
+.decoracao-planos-2 img{
+    width: 200px;
+    object-fit: cover;
 }
 
 #cards-planos{
@@ -361,6 +690,33 @@ html, body {
     }
 }
 
+@media (max-width: 991px) {
+    .decoracao-planos-2{
+        left: -70px;
+        top: -20px;
+    }
+
+    .decoracao-planos-1{
+        right: -140px;
+        top: 90px;
+    }
+    .decoracao-planos-1, .decoracao-planos-2{
+        opacity: 0.4;
+    }
+}
+
+@media (max-width: 660px) {
+    .decoracao-planos-2{
+        left: -10px;
+        top: -30px;
+    }
+
+    .decoracao-planos-1{
+        right: -110px;
+        top: 120px;
+    }
+}
+
 .card-wrapper:hover{
     transform: scale(1.05);
 }
@@ -379,17 +735,28 @@ html, body {
 
 /* OUTROS PLANOS */
 
-.bg-outros-planos{
-    background-image: url(../images/bgherogym3invert.png);
-    height: max-content;
-    width: 100%;
-    background-size: cover; 
-    background-repeat: no-repeat;
-}
-
 .outros-planos{
     padding-top: 50px;
     padding-bottom: 80px;
+    position: relative;
+}
+
+.decoracao-outros-planos-1{
+    position: absolute;
+    top: -40px;
+    right: -140px;
+    transform: scaleX(-1);
+}
+
+.decoracao-outros-planos-1 img, .decoracao-outros-planos-2 img{
+    width: 300px;
+    object-fit: cover;
+}
+
+.decoracao-outros-planos-2{
+    position: absolute;
+    top: -40px;
+    left: -140px;
 }
 
 #cards-outros-planos{
@@ -431,155 +798,29 @@ html, body {
     transform: translateY(-8px) scale(1.02);
 }
 
-
-/* LOCALIZAÇÃO */
-
-.bg-localizacao{
-    background-image: url(../images/bgherogym3.png);
-    height: max-content;
-    width: 100%;
-    background-size: cover; 
-    background-repeat: no-repeat;
-}
-
-.localizacao{
-    padding-top: 50px;
-    padding-bottom: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.card-localizacao{
-    max-width: 1060px;
-    min-width: 710px;
-    margin-top: 60px;
-    display: flex;
-    border-radius: 12px;
-    justify-content: center;
-    border: solid 2px #e24a03c7;
-    width: fit-content;
-}
-
-#mapa{
-    width: 30vw;
-    max-width: 690px;
-    min-width: 355px;
-    height: 350px;
-    background-color: #fff;
-    border-start-start-radius: 10px;
-    border-bottom-left-radius: 10px;
-    overflow: hidden;
-    border-right: solid 2px #e24a03c7;
-}
-
-#mapa img{
-    width: 40vw;
-    height: 390px;
-    min-width: 470px;
-    position: relative;
-    left: -60px;
-    bottom: 32px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-#info-localizacao{
-    width: 30vw;
-    min-width: 355px;
-    height: 350px;
-    background: linear-gradient(45deg, #0000 30%, #ea580c0d 50%, #0000 70%), linear-gradient(-45deg, #0000 30%, #f59e0b0d 50%, #0000 70%), radial-gradient(circle, #27272ae6 0%, #18181bf2 100%);
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    padding: 25px;
-}
-
-#info-localizacao h5{
-    display: flex; 
-    align-items: center;
-    color: #ffffffc5;
-    font-weight: 300;
-    margin-bottom: 15px;
-}
-
-#info-localizacao i{
-    font-size: 1.7rem; 
-    color: #e24a03c7; 
-    margin-right: 8px;
-}
-
-.horarios{
-    margin-top: 25px;
-}
-
-.horarios h4{
-    display: flex; 
-    align-items: center;
-    color: #ffffffe1;
-}
-
-.btn-localizacao{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-#btn-localizacao{
-    border-radius: 8px;
-    transform: skew(12deg);
-    background-color: #e24a03e8;
-    border: 0;
-    color: #fff;
-    padding: 6px 80px;
-    width: fit-content;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-#btn-localizacao:hover{
-    background-color: #fc5610;
-    box-shadow: 0 8px 15px rgba(226, 73, 3, 0.6);
-    transform: skew(12deg) scale(1.05);
-}
-
-#btn-localizacao span{
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    font-size: 1.2rem;
-    transform: skew(-12deg);
-}
-
-@media (max-width:991px) {
-    .card-localizacao{
-        min-width: 0;
-        width: 361px;
-        flex-wrap: wrap;
+@media (max-width: 991px) {
+    .decoracao-outros-planos-1{
+        right: -160px;
+    }
+    .decoracao-outros-planos-2{
+        left: -160px;
     }
 
-    #mapa{
-        border-start-start-radius: 10px;
-        border-top-right-radius: 10px;
-        border-bottom-left-radius: 0;
-        border-right: 0;
-        border-bottom: solid 2px #e24a03c7;
-    }
-
-    #info-localizacao{
-        border-bottom-right-radius: 10px;
-        border-top-right-radius: 0;
-        border-bottom-left-radius: 10px;
+    .decoracao-outros-planos-1, .decoracao-outros-planos-2{
+        opacity: 0.4;
     }
 }
+
 
 /* FORMULÁRIO */
-
 .bg-form{
-    background-image: url(../images/bgherogym3invert.png);
-    height: max-content;
+    position: relative;
+}
+
+.linha-horizontal{
     width: 100%;
-    background-size: cover; 
-    background-repeat: no-repeat;
+    height: 2px;
+    background: linear-gradient(120deg,rgba(38, 38, 42, 0) 0%, rgba(226, 73, 3, 1) 50%, rgba(24, 24, 27, 0) 100%);
 }
 
 .form{
@@ -590,8 +831,19 @@ html, body {
     justify-content: center;
 }
 
-#bg2-form{
-    background-color: #00000027;
+.decoracao-form-1{
+    position: absolute;
+    left: -60px;
+}
+
+.decoracao-form-1 img, .decoracao-form-2 img{
+    width: 250px;
+    object-fit: cover;
+}
+
+.decoracao-form-2{
+    position: absolute;
+    right: -60px;
 }
 
 .card-form{
@@ -742,6 +994,10 @@ html, body {
     .text-form p{
         width: 80%;
         text-align: center;
+    }
+
+    .decoracao-form-1, .decoracao-form-2{
+        display: none;
     }
 }
 

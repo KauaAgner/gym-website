@@ -22,8 +22,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/navbar.css">
@@ -34,7 +35,7 @@
         <nav class="navbar navbar-expand-lg navbar-light mask-custom shadow-0">
             <div class="container">
                 <a class="navbar-brand" href="/">
-                    <img src="images/logo.png" alt="logo" width="210px">
+                    <img src="images/logo.png" alt="logo" width="160px">
                 </a>
                 <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
                     data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -42,7 +43,7 @@
                     <i class="ph ph-list" style="color: #fff; font-size: 1.8rem;"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <div class="d-lg-flex justify-content-lg-around w-100">
+                    <div class="d-lg-flex justify-content-lg-between w-100">
                         <ul class="navbar-nav text-center">
                             <li class="nav-item"><a class="nav-link" href="#academia">Modalidades</a></li>
                             <li class="nav-item"><a class="nav-link" href="#espaco">Espaço</a></li>
@@ -79,143 +80,162 @@
                 <p>Transforme seu corpo e mente em um ambiente familiar. Equipamentos de alta qualidade, treinadores especialistas e 
                     resultados garantidos.</p>
                 <a href="#form">   
-                    <button><span>Iniciar Jornada</span></button>
+                    <button><span>Iniciar Jornada <i class="ph ph-caret-circle-right" id="seta-hero"></i></span></button>
                 </a>
 
-                <div class="d-flex mt-5 gap-4 gap-sm-5">
-                    <div class="text-center" id="alunos">
-                        <h2 style="color: transparent; -webkit-text-stroke: 1px #fff;">500+</h2>
-                        <h5 style="color: #E24903; margin-top: -10px;">Alunos Ativos</h5>
-                    </div>
-                    <div class="text-center" id="treinadores">
-                        <h2 style="color: transparent; -webkit-text-stroke: 1px #fff;">10+</h2>
-                        <h5 style="color: #E24903; margin-top: -10px;">Treinadores</h5>
-                    </div>
-                    <div class="text-center" id="anos">
-                        <h2 style="color: transparent; -webkit-text-stroke: 1px #fff;">8+</h2>
-                        <h5 style="color: #E24903; margin-top: -10px;">Anos de Serviço</h5>
-                    </div>
-                </div>
+                
             </div>
             <div id="img-hero">
-                <img id="hero-nobg" src="images/musc-nobg.png">
+                <img id="hero-nobg" src="images/musc-nobg.png" class="nao-interativa">
             </div>
         </section>
 
         <!-- ACADEMIA -->
         <section class="bg-academia">
+            <div id="hero-infos" class="d-flex justify-content-center gap-4 gap-sm-5">
+                <div class="text-center" id="alunos">
+                    <h2 style="color: transparent; -webkit-text-stroke: 1px #fff;">1000+</h2>
+                    <h5 style="color: #E24903; margin-top: -10px;">Alunos Ativos</h5>
+                </div>
+                <div class="text-center" id="treinadores">
+                    <h2 style="color: transparent; -webkit-text-stroke: 1px #fff;">15+</h2>
+                    <h5 style="color: #E24903; margin-top: -10px;">Treinadores</h5>
+                </div>
+                <div class="text-center" id="anos">
+                    <h2 style="color: transparent; -webkit-text-stroke: 1px #fff;">8+</h2>
+                    <h5 style="color: #E24903; margin-top: -10px;">Anos de Serviço</h5>
+                </div>
+                <div class="text-center" id="anos">
+                    <h2 style="color: transparent; -webkit-text-stroke: 1px #fff;">2</h2>
+                    <h5 style="color: #E24903; margin-top: -10px;">Unidades</h5>
+                </div>
+            </div>
             <div class="academia" id="academia">
                 <!-- MODALIDADES -->
-                <div class="modalidades" id="modalidades" data-aos="zoom-in">
+                <div class="modalidades" id="modalidades">
                     <div class="text-center title-modalidades">
                         <h1 style="color: #fff;">TRANSFORME <span style="color: transparent; -webkit-text-stroke: 1px #E24903;">SEU CORPO</span></h1>
                         <h1 style="color: #fff;"><span style="color: transparent; -webkit-text-stroke: 1px #E24903;">TRANSFORME</span> SUA VIDA!</h1>
-                        <h3 style="color: #ffffff7e; margin-top: 60px;">Nossas Modalidades</h3>
+                        <h3 style="color: #ffffff7e; margin-top: 40px;">Nossas Modalidades</h3>
                     </div>
 
+                    <div class="decoracao-modalidade-1">
+                        <img src="images/linhas1.png" class="nao-interativa">
+                    </div>
                     <div class="container cards-modalidades">
-                        <div class="modalidade">
-                            <div class="titulo">Musculação</div>
-                            <img src="images/modalidades/musculacao.jpg" alt="Musculação">
+                        <div class="carousel" id="carousel">
+                            <div class="carousel-cell">
+                                <div class="titulo">Musculação</div>
+                                <img src="images/modalidades/musculacao.jpg" alt="Musculação">
+                            </div>
+                            <div class="carousel-cell">
+                                <div class="titulo">Cardio</div>
+                                <img src="images/modalidades/cardio.jpg" alt="Cardio">
+                            </div>
+                            <div class="carousel-cell">
+                                <div class="titulo">Dança</div>
+                                <img src="images/modalidades/danca.jpg" alt="Dança">
+                            </div>
+                            <div class="carousel-cell">
+                                <div class="titulo">Boxe</div>
+                                <img src="images/modalidades/boxe.jpg" alt="Boxe">
+                            </div>
+                            <div class="carousel-cell">
+                                <div class="titulo">Jiu-Jitsu</div>
+                                <img src="images/modalidades/jiu-jitsu.jpg" alt="">
+                            </div>
+                            <div class="carousel-cell">
+                                <div class="titulo">Muay-Thai</div>
+                                <img src="images/modalidades/muay-thai.jpg" alt="">
+                            </div>
                         </div>
-                        <div class="modalidade">
-                            <div class="titulo">Cardio</div>
-                            <img src="images/modalidades/cardio.jpg" alt="Cardio">
-                        </div>
-                        <div class="modalidade">
-                            <div class="titulo">Dança</div>
-                            <img src="images/modalidades/danca.jpg" alt="Dança">
-                        </div>
-                        <div class="modalidade">
-                            <div class="titulo">Boxe</div>
-                            <img src="images/modalidades/boxe.jpg" alt="Boxe">
-                        </div>
-                        <div class="modalidade">
-                            <div class="titulo">Jiu-Jitsu</div>
-                            <img src="images/modalidades/jiu-jitsu.jpg" alt="">
-                        </div>
-                        <div class="modalidade">
-                            <div class="titulo">Muay-Thai</div>
-                            <img src="images/modalidades/muay-thai.jpg" alt="">
-                        </div>
+                    </div>
+                    <div class="decoracao-modalidade-2">
+                        <img src="images/dec1.png" class="nao-interativa">
                     </div>
                 </div>
 
                 <!-- TOUR ACADEMIA -->
-                <div class="tour-academia container" id="espaco" data-aos="zoom-out">
-                    <div class="text-center titles-tour">
+                <div class="tour-academia container" id="espaco">
+                    <div class="text-center titles-tour" style="position: relative; z-index: 3;">
                         <h1 style="color: #fff;">VIVA A EXPERIÊNCIA <span style="color: transparent; -webkit-text-stroke: 1px #E24903;">CORPUS</span></h1>
                         <h1 style="color: #fff;">ELEVE SUA JORNADA <span style="color: transparent; -webkit-text-stroke: 1px #E24903;">FITNESS</span></span></h1>
-                        <h3 style="color: #ffffff7e; margin-top: 60px;">Conheça Nosso Espaço!</h3>
+                        <h3 style="color: #ffffff7e; margin-top: 30px;">Conheça Nosso Espaço!</h3>
                     </div>
-
-                    <div class="glider-contain" style="margin-top: 40px;">
-                        <button class="glider-prev"><i style="color: #E24903; position: relative; top: 20px;" class="ph ph-caret-left"></i></button>
-                        <div class="glider mx-3" id="lightgallery">
-                            <a href="images/gallery/1.jpg">
-                                <img src="images/gallery/1.jpg" alt="Foto 1">
-                            </a>
-                            <a href="images/gallery/2.jpg">
-                                <img src="images/gallery/2.jpg" alt="Foto 2">
-                            </a>
-                            <a href="images/gallery/3.jpg">
-                                <img src="images/gallery/3.jpg" alt="Foto 3">
-                            </a>
-                            <a href="images/gallery/4.jpg">
-                                <img src="images/gallery/4.jpg" alt="Foto 4">
-                            </a>
-                            <a href="images/gallery/5.jpg">
-                                <img src="images/gallery/5.jpg" alt="Foto 5">
-                            </a>
-                            <a href="images/gallery/6.jpg">
-                                <img src="images/gallery/6.jpg" alt="Foto 6">
-                            </a>
-                            <a href="images/gallery/7.jpg">
-                                <img src="images/gallery/7.jpg" alt="Foto 7">
-                            </a>
-                            <a href="images/gallery/8.jpg">
-                                <img src="images/gallery/8.jpg" alt="Foto 8">
-                            </a>
-                            <a href="images/gallery/9.jpg">
-                                <img src="images/gallery/9.jpg" alt="Foto 9">
-                            </a>
-                            <a href="images/gallery/10.jpg">
-                                <img src="images/gallery/10.jpg" alt="Foto 10">
-                            </a>
-                            <a href="images/gallery/11.jpg">
-                                <img src="images/gallery/11.jpg" alt="Foto 11">
-                            </a>
-                            <a href="images/gallery/12.jpg">
-                                <img src="images/gallery/12.jpg" alt="Foto 12">
-                            </a>
-                            <a href="images/gallery/13.jpg">
-                                <img src="images/gallery/13.jpg" alt="Foto 13">
-                            </a>
-                            <a href="images/gallery/14.jpg">
-                                <img src="images/gallery/14.jpg" alt="Foto 14">
-                            </a>
-                            <a href="images/gallery/15.jpg">
-                                <img src="images/gallery/15.jpg" alt="Foto 15">
-                            </a>
-                            <a href="images/gallery/16.jpg">
-                                <img src="images/gallery/16.jpg" alt="Foto 16">
-                            </a>
+                      
+                    <div class="unidades-container">
+                        <div class="bg-btn-gallery">
+                            <div class="d-flex justify-content-center gap-2 btn-unidades">
+                                <div class="deg-12">
+                                    <button id="btn-unidade-1" onclick="carregarUnidade(1)">
+                                        <span>Unidade 1</span>
+                                    </button>
+                                    <button id="btn-unidade-2" onclick="carregarUnidade(2)">
+                                        <span>Unidade 2</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <button class="glider-next"><i style="color: #E24903; position: relative; top: 20px;" class="ph ph-caret-right"></i></button>
+                    
+                        <!-- UNIDADE -->
+                        <div class="unidade" id="unidade">
+                            <h1 class="text-white mt-2 mb-3" id="nome-unidade"></h1>
+                            <div class="bg-swiper">
+                                <div class="swiper unidade-gallery-swiper">
+                                    <div class="swiper-wrapper" id="lightgallery">
+                                        <!-- Slides dinâmicos -->
+                                    </div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                            </div>
+                            <button id="open-video"><span id="tour-virtual">Tour Virtual <i class="ph ph-play"
+                                        style="font-size: 1.35rem;"></i></span></button>
+                    
+                            <!-- LOCALIZAÇÃO -->
+                            <div class="card-localizacao">
+                                <div id="mapa">
+                                    <a id="link-mapa" target="_blank">
+                                        <img id="mapa-img" src="" alt="Mapa">
+                                    </a>
+                                </div>
+                                <div id="info-unidade">
+                                    <h5><i class="ph ph-map-pin"></i><span id="endereco"></span></h5>
+                                    <h5><i class="ph ph-phone"></i><span id="telefone"></span></h5>
+                                    <h5><i class="ph ph-whatsapp-logo"></i><span id="whatsapp"></span></h5>
+                                    <div class="horarios">
+                                        <h4><i class="ph ph-clock" style="font-size: 1.9rem;"></i>Horários de Funcionamento:</h4>
+                                        <h5><i class="ph ph-calendar"></i><span id="horarios-seg-a-seg"></span></h5>
+                                        <h5><i class="ph ph-calendar-plus"></i><span id="horarios-sab-dom"></span></h5>
+                                    </div>
+                                    <div class="btn-localizacao">
+                                        <a href="" target="_blank">
+                                            <button id="btn-localizacao"><span><i class="ph ph-map-pin"></i>Localizar no mapa</span></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <button id="open-video"><span id="tour-virtual">Tour Virtual <i class="ph ph-play" style="font-size: 1.35rem;"></i></span></button>
                 </div>
-             </div>
             </div>
         </section>
 
         <!-- PLANOS -->
         <section class="bg-planos">
-            <div class="container planos" id="planos" data-aos="zoom-in">
+            <div class="container planos" id="planos">
                 <div class="text-center" id="title-planos">
                     <h1 style="color: #fff;">INVISTA <span style="color: transparent; -webkit-text-stroke: 1px #E24903;">EM</span></h1>
                     <h1 style="color: #fff;"><span style="color: transparent; -webkit-text-stroke: 1px #E24903;">SUA</span> EVOLUÇÃO</h1>
                     <h4 style="color: #ffffff7e; margin-top: 60px;">A jornada começa com uma escolha. Qual é a sua?</h4>
+                </div>
+
+                <div class="decoracao-planos-1">
+                    <img src="images/seta2.png" class="nao-interativa">
+                </div>
+
+                <div class="decoracao-planos-2">
+                    <img src="images/seta3.png" class="nao-interativa">
                 </div>
 
                 <div id="cards-planos">
@@ -245,11 +265,11 @@
                                 <div class="text-center container" id="beneficios">
                                     <p class="beneficio">
                                         <i class="ph ph-check-circle" style="font-size: 1.4rem; color: #ff7636; margin-right: 5px;"></i>
-                                        Acesso a área de Musculação
+                                        Acesso a todas as Unidades
                                     </p>
                                     <p class="beneficio">
                                         <i class="ph ph-check-circle" style="font-size: 1.4rem; color: #ff7636; margin-right: 5px;"></i>
-                                        Acesso a área de Cardio
+                                        Cardio e Musculação
                                     </p>
                                     <p class="beneficio">
                                         <i class="ph ph-check-circle" style="font-size: 1.4rem; color: #ff7636; margin-right: 5px;"></i>
@@ -291,11 +311,11 @@
                                 <div class="text-center container" id="beneficios">
                                     <p class="beneficio">
                                         <i class="ph ph-check-circle" style="font-size: 1.4rem; color: #ff7636; margin-right: 5px;"></i>
-                                        Acesso a área de Musculação
+                                        Acesso a todas as Unidades
                                     </p>
                                     <p class="beneficio">
                                         <i class="ph ph-check-circle" style="font-size: 1.4rem; color: #ff7636; margin-right: 5px;"></i>
-                                        Acesso a área de Cardio
+                                        Cardio e Musculação
                                     </p>
                                     <p class="beneficio">
                                         <i class="ph ph-check-circle" style="font-size: 1.4rem; color: #ff7636; margin-right: 5px;"></i>
@@ -336,11 +356,11 @@
                                 <div class="text-center container" id="beneficios">
                                     <p class="beneficio">
                                         <i class="ph ph-check-circle" style="font-size: 1.4rem; color: #ff7636; margin-right: 5px;"></i>
-                                        Acesso a área de Musculação
+                                        Acesso a todas as Unidades
                                     </p>
                                     <p class="beneficio">
                                         <i class="ph ph-check-circle" style="font-size: 1.4rem; color: #ff7636; margin-right: 5px;"></i>
-                                        Acesso a área de Cardio
+                                        Cardio e Musculação
                                     </p>
                                     <p class="beneficio">
                                         <i class="ph ph-check-circle" style="font-size: 1.4rem; color: #ff7636; margin-right: 5px;"></i>
@@ -360,11 +380,20 @@
 
         <!-- OUTROS PLANOS -->
         <section class="bg-outros-planos">
-            <div class="container outros-planos" data-aos="zoom-out">
+            <div class="container outros-planos">
                 <div class="title-outros-planos text-center">
                     <h1 style="color: #fff;">SE VOCÊ QUER MAIS</h1>
                     <h1 style="color: transparent; -webkit-text-stroke: 1px #E24903;">AQUI TEM!</h1>
                 </div>
+
+                <div class="decoracao-outros-planos-1">
+                    <img src="images/seta1.png" class="nao-interativa">
+                </div>
+
+                <div class="decoracao-outros-planos-2">
+                    <img src="images/seta1.png" class="nao-interativa">
+                </div>
+                
                 <div id="cards-outros-planos">
                     <div class="card-wrapper2">
                         <svg width="306" height="356" style="position: absolute; pointer-events: none; z-index: 0;"
@@ -431,65 +460,43 @@
             </div>
         </section>
 
-        <!-- LOCALIZACAO -->
-        <section class="bg-localizacao">
-            <div class="localizacao container" id="localizacao" data-aos="fade-down">
-                <div class="text-center title-localizacao">
-                    <h1 style="color: #fff;">ESTAMOS ESPERANDO<span style="color: transparent; -webkit-text-stroke: 1px #E24903;"> POR VOCÊ!</span></h1>
-                </div>
-            
-
-                <div class="card-localizacao">
-                    <div id="mapa">
-                        <a href="https://www.google.com/maps/place/Academia+Corpus+Fitness/data=!4m2!3m1!1s0x0:0x7a2f38b1204ef6eb?sa=X&ved=1t:2428&ictx=111" target="_blank">
-                            <img src="images/mapa.png" alt="">
-                        </a>
-                    </div>
-                    <div id="info-localizacao">
-                        <h5><i class="ph ph-map-pin"></i>R. Benedito Cláudio, 128 - Centro</h5>
-                        <h5><i class="ph ph-phone"></i>(73) 3012-4800</h5>
-                        <h5><i class="ph ph-whatsapp-logo"></i>(73) 98207-8074</h5>
-                        <div class="horarios">
-                            <h4><i class="ph ph-clock" style="font-size: 1.9rem;"></i>Horários de Funcionamento:</h4>
-                            <h5 style="margin-top: 18px;"><i class="ph ph-calendar"></i>Seg a Sex: 5h às 23h</h5>
-                            <h5><i class="ph ph-calendar-plus"></i>Sáb: 7h às 16h | Dom: 7h às 12h</h5>
-                        </div>
-                        <div class="btn-localizacao">
-                        <a href="https://www.google.com/maps/place/Academia+Corpus+Fitness/data=!4m2!3m1!1s0x0:0x7a2f38b1204ef6eb?sa=X&ved=1t:2428&ictx=111" target="_blank">
-                            <button id="btn-localizacao"><span>Localizar</span></button>
-                        </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- FORMULÁRIO -->
         <section class="bg-form">
-            <div id="bg2-form">
-                <div class="container form" id="form">
-                    <div class="card-container">
-                        <div class="card-form">
-                            <div class="text-form" data-aos="zoom-in">
-                                <div class="text-center" id="title-form">
-                                    <h1>SUA TRANSFORMAÇÃO</h1>
-                                    <h1>COMEÇA AGORA</h1>
-                                </div>
-                                <p style="font-size: 1.1rem; color: #ffffffa4;">Transforme-se na melhor versão de si mesmo na Corpus Fitness. Mais de 500 pessoas já conquistaram seus objetivos aqui. Agora é a sua vez!</p>
-                                <form id="nomeForm">
-                                    <p class="text-center  m-0" id="alert"  ></p>
-                                    <div class="input">
-                                        <input type="text" id="primeiro_nome" name="primeiro_nome" placeholder="Primeiro Nome" required>
-                                    
-                                        <input type="text" id="segundo_nome" name="segundo_nome" placeholder="Segundo Nome" required>
-                                    </div>
+            <div class="linha-horizontal"></div>
 
-                                    <button type="button" onclick="gerarLinkWhatsapp()"><span>Iniciar Jornada</span></button>
-                                </form>
+            <div class="decoracao-form-1">
+                <img src="images/X1.png" class="nao-interativa">
+            </div>
+
+            <div class="decoracao-form-2">
+                <img src="images/X1.png" class="nao-interativa">
+            </div>
+
+            <div class="container form" id="form">
+                <div class="card-container">
+                    <div class="card-form">
+                        <div class="text-form" data-aos="zoom-in">
+                            <div class="text-center" id="title-form">
+                                <h1>SUA TRANSFORMAÇÃO</h1>
+                                <h1>COMEÇA AGORA</h1>
                             </div>
+                            <p style="font-size: 1.1rem; color: #ffffffa4;">Transforme-se na melhor versão de si mesmo na Corpus
+                                Fitness. Mais de 1000 pessoas buscam seus objetivos aqui. Agora é a sua vez!</p>
+                            <form id="nomeForm">
+                                <p class="text-center  m-0" id="alert"></p>
+                                <div class="input">
+                                    <input type="text" id="primeiro_nome" name="primeiro_nome" placeholder="Primeiro Nome"
+                                        required>
+        
+                                    <input type="text" id="segundo_nome" name="segundo_nome" placeholder="Segundo Nome"
+                                        required>
+                                </div>
+        
+                                <button type="button" onclick="gerarLinkWhatsapp()"><span>Concluir Pré-Matrícula</span></button>
+                            </form>
                         </div>
-                        <img class="card-image" src="images/img-form.png" alt="">
                     </div>
+                    <img class="card-image" src="images/img-form.png" alt="">
                 </div>
             </div>
         </section>
@@ -541,13 +548,13 @@
     <!-- SCRIPTS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-    <script>
-    lightGallery(document.getElementById("lightgallery"));
-    </script>
-    <script src="js/gallery.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <!-- lightGallery JS -->
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.umd.min.js"></script>
     <script>
     window.addEventListener('load', () => {
         AOS.init({
@@ -564,6 +571,8 @@
     <script src="js/redirect-to-form.js"></script>
     <script src="js/video-tour.js"></script>
     <script src="js/scrolllock.js"></script>
+    <script src="js/carousel-modalidades.js"></script>
+    <script src="js/unidades.js"></script>
     <script src="https://unpkg.com/phosphor-icons"></script>
     <script src="js/schema.js"></script>
 </body>
