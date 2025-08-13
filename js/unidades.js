@@ -33,6 +33,7 @@ function carregarUnidade(unidade) {
                 document.getElementById('horarios-sab-dom').innerText = `Sáb: ${data.horarios.sab} | Dom: ${data.horarios.dom}`;
                 document.getElementById('mapa-img').src = `images/${data.mapa}`;
                 document.getElementById('link-mapa').href = data.link_mapa;
+                document.getElementById('btn-link-mapa').href = data.link_mapa;
 
                 lightGallery(galleryContainer, {
                     selector: 'a',
