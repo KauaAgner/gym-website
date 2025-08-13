@@ -1,4 +1,5 @@
 let swiperInstance = null;
+let videoLightbox = null;
 
 function carregarUnidade(unidade) {
     const unidadePath = `images/unidade${unidade}/unidade.json`;
@@ -53,7 +54,35 @@ function carregarUnidade(unidade) {
                 const btnAtual = document.getElementById(`btn-unidade-${unidade}`);
                 if (btnAtual) btnAtual.classList.add('active');
 
-                
+                if (videoLightbox) {
+                    videoLightbox.destroy();
+                }
+
+                if (data.video) {
+                    videoLightbox = GLightbox({
+                        elements: [
+                            {
+                                href: `videos/unidade${unidade}/${data.video}`,
+                                type: 'video',
+                                source: 'local',
+                                autoplay: true,
+                            }
+                        ]
+                    });
+
+                    const openVideoBtn = document.getElementById('open-video');
+                    if (openVideoBtn) {
+                        openVideoBtn.onclick = () => videoLightbox.open();
+                        openVideoBtn.style.display = 'inline-block';
+                    }
+                } else {
+                    const openVideoBtn = document.getElementById('open-video');
+                    if (openVideoBtn) {
+                        openVideoBtn.onclick = null;
+                        openVideoBtn.style.display = 'none';
+                    }
+                }
+
                 unidadeContainer.classList.remove('hidden');
             })
             .catch(err => {
@@ -61,7 +90,9 @@ function carregarUnidade(unidade) {
                 document.getElementById('nome-unidade').innerText = 'Erro ao carregar unidade';
                 unidadeContainer.classList.remove('hidden');
             });
-    }, 180); 
+    }, 180);
 }
 
-carregarUnidade(1);
+document.addEventListener("DOMContentLoaded", function () {
+    carregarUnidade(1);
+});

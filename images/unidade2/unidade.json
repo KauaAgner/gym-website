@@ -1,8 +1,8 @@
 {
   "nome": "Unidade Fontana",
-  "endereco": "R. Exemplo, 128 - Fontana",
+  "endereco": "Av. José Ubaldino Alves Pinto, 450 - Fontana I",
   "telefone": "(73) 3012-4800",
-  "whatsapp": "(73) 98207-8074",
+  "whatsapp": "(73) 99967-4125",
   "horarios": {
     "seg_a_sex": "5h às 23h",
     "sab": "7h às 16h",
@@ -15,6 +15,7 @@
   "gallery/4.jpg",
   "gallery/5.jpg"
 ],
-  "mapa": "mapa.png",
-  "link_mapa": "https://www.google.com/maps/place/Academia+Corpus+Fitness"
+  "mapa": "mapa2.jpg",
+  "link_mapa": "https://www.google.com/maps/place/Av.+Jos%C3%A9+Ubaldino+Alves+Pinto,+450+-+Porto+Seguro,+BA,+45810-000/@-16.4282556,-39.0944194,15.75z/data=!4m5!3m4!1s0x73693e76c22a997:0x2f21ddf5d763b7cd!8m2!3d-16.4270475!4d-39.0911144?entry=ttu&g_ep=EgoyMDI1MDgxMS4wIKXMDSoASAFQAw%3D%3D",
+  "video": "video-tour2.mp4"
 }
