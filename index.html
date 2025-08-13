@@ -47,8 +47,8 @@
                         <ul class="navbar-nav text-center">
                             <li class="nav-item"><a class="nav-link" href="#academia">Modalidades</a></li>
                             <li class="nav-item"><a class="nav-link" href="#espaco">Espaço</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#planos">Planos</a></li>
                             <li class="nav-item"><a class="nav-link" href="#localizacao">Localização</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#planos">Planos</a></li>
                         </ul>
                         <ul class="navbar-nav d-flex flex-row gap-3 mt-3 mt-lg-0 gap-lg-1 justify-content-center" id="social-icons">
                             <li class="nav-item">
@@ -72,21 +72,23 @@
 
     <main>
         <!-- HERO -->
-        <section class="hero bg-hero">
-            <div id="text-hero" data-aos="fade-right">
-                <h1 style="color:#fff;">SUPERE</h1>
-                <h1 style="color: transparent; -webkit-text-stroke: 2px #E24903;">SEUS</h1>
-                <h1 style="color:#fff;">LIMITES</h1>
-                <p>Transforme seu corpo e mente em um ambiente familiar. Equipamentos de alta qualidade, treinadores especialistas e 
-                    resultados garantidos.</p>
-                <a href="#form">   
-                    <button><span>Iniciar Jornada <i class="ph ph-caret-circle-right" id="seta-hero"></i></span></button>
-                </a>
+        <section class=" bg-hero">
+            <div class="container hero">
+                <div id="text-hero" data-aos="fade-right">
+                    <h1 style="color:#fff;">SUPERE</h1>
+                    <h1 style="color: transparent; -webkit-text-stroke: 2px #E24903;">SEUS</h1>
+                    <h1 style="color:#fff;">LIMITES</h1>
+                    <p>Transforme seu corpo e mente em um ambiente familiar. Equipamentos de alta qualidade, treinadores especialistas e 
+                        resultados garantidos.</p>
+                    <a href="#form">   
+                        <button><span>Iniciar Jornada <i class="ph ph-caret-circle-right" id="seta-hero"></i></span></button>
+                    </a>
 
-                
-            </div>
-            <div id="img-hero">
-                <img id="hero-nobg" src="images/musc-nobg.png" class="nao-interativa">
+                    
+                </div>
+                <div id="img-hero">
+                    <img id="hero-nobg" src="images/musc-nobg.png" class="nao-interativa">
+                </div>
             </div>
         </section>
 
@@ -179,7 +181,7 @@
                     
                         <!-- UNIDADE -->
                         <div class="unidade" id="unidade">
-                            <h1 class="text-white mt-2 mb-3" id="nome-unidade"></h1>
+                            <h1 class=" mt-2 mb-3" id="nome-unidade" style="color: transparent; -webkit-text-stroke: 1px #fff; text-transform: uppercase;"></h1>
                             <div class="bg-swiper">
                                 <div class="swiper unidade-gallery-swiper">
                                     <div class="swiper-wrapper" id="lightgallery">
@@ -193,7 +195,7 @@
                                         style="font-size: 1.35rem;"></i></span></button>
                     
                             <!-- LOCALIZAÇÃO -->
-                            <div class="card-localizacao">
+                            <div class="card-localizacao" id="localizacao">
                                 <div id="mapa">
                                     <a id="link-mapa" target="_blank">
                                         <img id="mapa-img" src="" alt="Mapa">
@@ -223,20 +225,20 @@
 
         <!-- PLANOS -->
         <section class="bg-planos">
+            <div class="decoracao-planos-1">
+                <img src="images/seta2.png" class="nao-interativa">
+            </div>
+            
+            <div class="decoracao-planos-2">
+                <img src="images/seta3.png" class="nao-interativa">
+            </div>
             <div class="container planos" id="planos">
                 <div class="text-center" id="title-planos">
                     <h1 style="color: #fff;">INVISTA <span style="color: transparent; -webkit-text-stroke: 1px #E24903;">EM</span></h1>
                     <h1 style="color: #fff;"><span style="color: transparent; -webkit-text-stroke: 1px #E24903;">SUA</span> EVOLUÇÃO</h1>
-                    <h4 style="color: #ffffff7e; margin-top: 60px;">A jornada começa com uma escolha. Qual é a sua?</h4>
+                    <h4 style="color: #ffffff7e; margin-top: 40px;">A jornada começa com uma escolha. Qual é a sua?</h4>
                 </div>
 
-                <div class="decoracao-planos-1">
-                    <img src="images/seta2.png" class="nao-interativa">
-                </div>
-
-                <div class="decoracao-planos-2">
-                    <img src="images/seta3.png" class="nao-interativa">
-                </div>
 
                 <div id="cards-planos">
                     <a href="#form">
@@ -380,18 +382,17 @@
 
         <!-- OUTROS PLANOS -->
         <section class="bg-outros-planos">
+            <div class="decoracao-outros-planos-1">
+                <img src="images/seta1.png" class="nao-interativa">
+            </div>
+            
+            <div class="decoracao-outros-planos-2">
+                <img src="images/seta1.png" class="nao-interativa">
+            </div>
             <div class="container outros-planos">
                 <div class="title-outros-planos text-center">
                     <h1 style="color: #fff;">SE VOCÊ QUER MAIS</h1>
                     <h1 style="color: transparent; -webkit-text-stroke: 1px #E24903;">AQUI TEM!</h1>
-                </div>
-
-                <div class="decoracao-outros-planos-1">
-                    <img src="images/seta1.png" class="nao-interativa">
-                </div>
-
-                <div class="decoracao-outros-planos-2">
-                    <img src="images/seta1.png" class="nao-interativa">
                 </div>
                 
                 <div id="cards-outros-planos">
@@ -517,8 +518,8 @@
                     <ul class="list-unstyled d-flex flex-column gap-1">
                         <li><a href="#academia" class="text-white text-decoration-none">Modalidades</a></li>
                         <li><a href="#espaco" class="text-white text-decoration-none">Espaço</a></li>
-                        <li><a href="#planos" class="text-white text-decoration-none">Planos</a></li>
                         <li><a href="#localizacao" class="text-white text-decoration-none">Localização</a></li>
+                        <li><a href="#planos" class="text-white text-decoration-none">Planos</a></li>
                     </ul>
                 </div>
                 
