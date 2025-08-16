@@ -17,14 +17,26 @@
 }
 
 nav .container{
-  border: solid 2px #777777;
-  border-radius: 18px;
+  border-radius: 10px;
   width: 80%;
-  backdrop-filter: blur(10px);
-  background-color: #52515127;
+  background-color: #3f3e3e6e;
   padding-bottom: 5px;
   padding-top: 5px;
-  -webkit-backdrop-filter: blur(10px);
+  -moz-transform: skew(12deg, 0deg);
+  -webkit-transform: skew(12deg, 0deg);
+  -o-transform: skew(12deg, 0deg);
+  -ms-transform: skew(12deg, 0deg);
+  transform: skew(12deg, 0deg);
+}
+
+.navbar a{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transform: skew(-12deg, 0deg);
+  -moz-transform: skew(-12deg, 0deg);
+  -o-transform: skew(-12deg, 0deg);
+  -ms-transform: skew(-12deg, 0deg);
+  transform: skew(-12deg, 0deg);
 }
 
 .navbar-brand{
@@ -70,6 +82,21 @@ nav .container{
 }
 
 @media (max-width: 991px) {
+  nav .container{
+    -webkit-transform: skew(0deg, 0deg);
+    -moz-transform: skew(0deg, 0deg);
+    -o-transform: skew(0deg, 0deg);
+    -ms-transform: skew(0deg, 0deg);
+    transform: skew(0deg, 0deg);
+  }
+
+  .navbar a{
+    -webkit-transform: skew(0deg, 0deg);
+    -moz-transform: skew(0deg, 0deg);
+    -o-transform: skew(0deg, 0deg);
+    -ms-transform: skew(0deg, 0deg);
+    transform: skew(0deg, 0deg);
+  }
 
   #social-icons i{
     font-size: 1.3rem;
@@ -82,9 +109,11 @@ nav .container{
 
   nav .container{
     width: 98%;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   .navbar-brand{
-  margin-right: 0;
+    margin-right: 0;
   }
 }
